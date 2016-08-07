@@ -11,6 +11,16 @@ Dev for flockbird-mithril
 
 ## install ##
 
+After git clone, exec below commands.
+
+```
+npm install
+```
+
+## For develop ##
+
+### setting log
+
 ```
 npm init
 npm install webpack --save-dev

@@ -13,15 +13,28 @@ var cleanCSS = require('gulp-clean-css');
 var webpack = require('gulp-webpack');;
 var webpackConfig = require('./webpack.config.js');
 
-gulp.task('bootstrap', function() {
-  gulp.src('src/sass/bootstrap-custom.scss')
-   .pipe(sass({
-      includePaths: ['node_modules/bootstrap-sass/assets/stylesheets']
+gulp.task('css', function() { 
+  gulp.src('src/sass/style.scss')
+    .pipe(sass({
+      style: 'compressed',
+      loadPath: [
+        'src/sass',
+        'node_modules/bootstrap-sass/assets/stylesheets',
+        'node_modules/font-awesome/scss',
+      ]
     }).on('error', sass.logError))
     .pipe(autoprefixer())
     .pipe(cleanCSS())
     .pipe(gulp.dest('./public/assets/css'));
 });
+
+//gulp.task('icons', function() {
+//  gulp.src([
+//      'node_modules/font-awesome/fonts/**.*',
+//      'node_modules/bootstrap-sass/assets/fonts/bootstrap/**.*'
+//    ])
+//    .pipe(gulp.dest('./public/assets/fonts'));
+//});
 
 gulp.task('webpack', function () {
   gulp.src(['./src/js/*.js'])
@@ -34,4 +47,4 @@ gulp.task('watch', function() {/*scssを監視*/
     /*拡張子がscssのファイルに変更があれば、gulp.task('sass')を実行*/
 });
 
-gulp.task('default', ['webpack', 'bootstrap']);
+gulp.task('default', ['webpack', 'css']);
