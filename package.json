@@ -1,5 +1,5 @@
 {
-  "name": "mithril.localhost",
+  "name": "flockbird-mithril",
   "version": "1.0.0",
   "description": "",
   "main": "index.js",
@@ -10,16 +10,13 @@
   "license": "ISC",
   "devDependencies": {
     "bootstrap-sass": "^3.3.6",
-    "css-loader": "^0.23.1",
-    "file-loader": "^0.9.0",
     "gulp": "^3.9.1",
     "gulp-autoprefixer": "^3.1.0",
     "gulp-clean-css": "^2.0.12",
     "gulp-sass": "^2.3.2",
+    "gulp-webpack": "^1.5.0",
     "mithril": "^0.2.5",
     "node-sass": "^3.8.0",
-    "sass-loader": "^4.0.0",
-    "style-loader": "^0.13.1",
     "webpack": "^1.13.1"
   },
   "dependencies": {
